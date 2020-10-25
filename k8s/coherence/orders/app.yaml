@@ -1,0 +1,46 @@
+#
+# Copyright (c) 2020 Oracle and/or its affiliates.
+#
+# Licensed under the Universal Permissive License v 1.0 as shown at
+# http://oss.oracle.com/licenses/upl.
+#
+apiVersion: coherence.oracle.com/v1
+kind: Coherence
+metadata:
+  name: orders
+spec:
+  cluster: SockShop
+  role: Orders
+  replicas: 1
+  image: helidonsockshop/orders-coherence:2.0.0
+  imagePullPolicy: Always
+  env:
+    - name: TRACING_HOST
+      value: "jaeger-collector"
+    - name: JAEGER_SAMPLER_TYPE
+      value: "const"
+    - name: JAEGER_SAMPLER_PARAM
+      value: "1"
+  application:
+    type: helidon
+  jvm:
+    memory:
+      heapSize: 140m
+  ports:
+    - name: http
+      port: 7001
+      service:
+        name: orders
+        port: 80
+      serviceMonitor:
+        enabled: true
+  resources:
+    requests:
+      cpu: 100m
+      memory: 200Mi
+    limits:
+      cpu: 1000m
+      memory: 400Mi
+  readinessProbe:
+    initialDelaySeconds: 5
+    periodSeconds: 10
