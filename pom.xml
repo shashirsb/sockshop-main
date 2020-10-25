@@ -17,12 +17,12 @@
     <version>2.0.0</version>
     
     <modules>
-        <module>../carts</module>
-        <module>../catalog</module>
-        <module>../orders</module>
-        <module>../payment</module>
-        <module>../shipping</module>
-        <module>../users</module>
+        <module>../sockshop-carts</module>
+        <module>../sockshop-catalog</module>
+        <module>../sockshop-orders</module>
+        <module>../sockshop-payment</module>
+        <module>../sockshop-shipping</module>
+        <module>../sockshop-users</module>
     </modules>
 
 </project>
