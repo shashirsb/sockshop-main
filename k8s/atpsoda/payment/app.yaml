@@ -4,8 +4,8 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at
 # http://oss.oracle.com/licenses/upl.
 #
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: payment
   labels:
@@ -23,9 +23,9 @@ spec:
           defaultMode: 420
           secretName: atp-secret
       containers:
-        - name: payment
-          image: shashioracle/payment-atpsoda:2.0.0
-          volumeMounts:
-          - mountPath: /home/opc/Wallet_sockshopdb
-            name: atp-secret
-            readOnly: true
+      - name: payment
+        image: shashioracle/payment-atpsoda:2.0.0
+        volumeMounts:
+        - mountPath: /home/opc/Wallet_sockshopdb
+          name: atp-secret
+          readOnly: true
