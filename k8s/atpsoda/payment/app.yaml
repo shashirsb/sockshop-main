@@ -16,6 +16,9 @@ spec:
     matchLabels:
       app: payment
   template:
+    metadata:
+      labels:
+        app: payment
     spec:
       volumes:
       - name: atp-secret

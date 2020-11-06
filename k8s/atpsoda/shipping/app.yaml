@@ -16,6 +16,9 @@ spec:
     matchLabels:
       app: shipping
   template:
+    metadata:
+      labels:
+        app: shipping
     spec:
       volumes:
       - name: atp-secret

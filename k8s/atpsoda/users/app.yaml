@@ -16,6 +16,9 @@ spec:
     matchLabels:
       app: users
   template:
+    metadata:
+      labels:
+        app: users
     spec:
       volumes:
       - name: atp-secret

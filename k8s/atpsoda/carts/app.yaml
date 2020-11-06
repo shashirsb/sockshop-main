@@ -16,6 +16,9 @@ spec:
     matchLabels:
       app: carts
   template:
+    metadata:
+      labels:
+        app: carts
     spec:
       volumes:
       - name: atp-secret

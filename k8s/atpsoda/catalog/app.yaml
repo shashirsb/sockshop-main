@@ -16,6 +16,9 @@ spec:
     matchLabels:
       app: catalog
   template:
+    metadata:
+      labels:
+        app: catalog
     spec:
       volumes:
       - name: atp-secret

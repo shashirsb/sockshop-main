@@ -16,6 +16,9 @@ spec:
     matchLabels:
       app: orders
   template:
+    metadata:
+      labels:
+        app: orders
     spec:
       volumes:
       - name: atp-secret
