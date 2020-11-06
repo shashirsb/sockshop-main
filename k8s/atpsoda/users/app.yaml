@@ -1,0 +1,27 @@
+#
+# Copyright (c) 2020 Oracle and/or its affiliates.
+#
+# Licensed under the Universal Permissive License v 1.0 as shown at
+# http://oss.oracle.com/licenses/upl.
+#
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: users
+  labels:
+    component: sockshop
+spec:
+  template:
+    spec:
+      volumes:
+      - name: atp-secret
+        secret:
+          defaultMode: 420
+          secretName: atp-secret
+      containers:
+        - name: carts
+          image: shashioracle/users-atpsoda:2.0.0
+          volumeMounts:
+          - mountPath: /home/opc/Wallet_sockshopdb
+            name: atp-secret
+            readOnly: true
