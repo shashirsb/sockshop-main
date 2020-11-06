@@ -23,7 +23,7 @@ spec:
           defaultMode: 420
           secretName: atp-secret
       containers:
-        - name: carts
+        - name: users
           image: shashioracle/users-atpsoda:2.0.0
           volumeMounts:
           - mountPath: /home/opc/Wallet_sockshopdb

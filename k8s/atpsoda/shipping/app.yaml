@@ -11,6 +11,10 @@ metadata:
   labels:
     component: sockshop
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shipping
   template:
     spec:
       volumes:
@@ -19,7 +23,7 @@ spec:
           defaultMode: 420
           secretName: atp-secret
       containers:
-        - name: carts
+        - name: shipping
           image: shashioracle/shipping-atpsoda:2.0.0
           volumeMounts:
           - mountPath: /home/opc/Wallet_sockshopdb

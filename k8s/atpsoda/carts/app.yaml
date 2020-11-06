@@ -11,12 +11,12 @@ metadata:
   labels:
     component: sockshop
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: carts
   template:
     spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: carts
       volumes:
       - name: atp-secret
         secret:
