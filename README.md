@@ -140,7 +140,7 @@ We create a namespace called `sockshop-${SOCKSHOP_BACKEND}` so we can deploy mul
 back-ends at a time.
 
 
-Choose one of the following options:
+
 * **Installing Oracle ATP Soda Back-end**
 
     ```bash
