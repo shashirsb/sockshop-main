@@ -88,7 +88,7 @@ all project repositories at once.
 Download the ATP Wallet from OCI Service Console :
 
 1. Download Wallet_<your_db_name>
-
+ ```bash
     > Connect to the VM where you can connect to kubernetes cluster and can run kubectl cmd
     > Download Wallet_<your_db_name>.zip localy on the filesystem
     > Create directory Wallet_<your_db_name>
@@ -97,7 +97,7 @@ Download the ATP Wallet from OCI Service Console :
     > Unzip Wallet_<your_db_name>.zip
     
     > In the same folder create a new file "atp_password.txt" with ATP DB password in it 
-    
+      ```   
    
 
 2. Git clone https://github.com/shashirsb/sockshop-main.git
