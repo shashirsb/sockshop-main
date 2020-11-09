@@ -110,7 +110,7 @@ Download the ATP Wallet from OCI Service Console :
     
     $ Run the script to create the secret within namespace sockshop-atpsoda 
     ./k8s/generate_wallet_secret.sh
-    ```   
+  ```   
 
 ## Quick Start
 
