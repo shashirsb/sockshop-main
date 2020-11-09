@@ -41,22 +41,22 @@ Helidon, implementing the API that the legacy `front-end` service expects).
 
 ![Architecture Diagram](./doc/images/architecture.png)
 
-- **[Product Catalog](https://github.com/helidon-sockshop/catalog)**, which provides 
+- **[Product Catalog](https://github.com/shashirsb/sockshop-catalog)**, which provides 
 REST API that allows you to search product catalog and retrieve individual product details;
 
-- **[Shopping Cart](https://github.com/helidon-sockshop/carts)**, which provides 
+- **[Shopping Cart](https://github.com/shashirsb/sockshop-carts)**, which provides 
 REST API that allows you to manage customers' shopping carts;
 
-- **[Orders](https://github.com/helidon-sockshop/orders)**, which provides REST API 
+- **[Orders](https://github.com/shashirsb/sockshop-orders)**, which provides REST API 
 that allows customers to place orders;
 
-- **[Payment](https://github.com/helidon-sockshop/payment)**, which provides REST API 
+- **[Payment](https://github.com/shashirsb/sockshop-payment)**, which provides REST API 
 that allows you to process payments;
 
-- **[Shipping](https://github.com/helidon-sockshop/shipping)**, which provides REST API 
+- **[Shipping](https://github.com/shashirsb/sockshop-shipping)**, which provides REST API 
 that allows you to ship orders and track shipments;
 
-- **[Users](https://github.com/helidon-sockshop/users)**, which provides REST API 
+- **[Users](https://github.com/shashirsb/sockshop-users)**, which provides REST API 
 that allows you to manage customer information and provides registration and 
 authentication functionality for the customers.
 
@@ -114,50 +114,13 @@ If you do, you can simply run the following command from the `sockshop` director
 and set the `SOCKSHOP_BACKEND` variable to one of the following values, 
 indicating the type of back-end you want to deploy.
 
-* `core` - In-memory only back-end
-* `coherence` - Coherence back-end
-* `mongo` - MongoDB back-end
-* `mysql` - MySQL database back-end 
-* `redis` - Redis back-end
+* `atpsoda` - Oracle ATP Soda back-end
+
 
 We create a namespace called `sockshop-${SOCKSHOP_BACKEND}` so we can deploy multiple 
 back-ends at a time.
 
-Choose one of the following options:
-* **Installing non-Coherence Back-end**
-
-    ```bash
-    $ export SOCKSHOP_BACKEND=core
-    
-    $ kubectl create namespace sockshop-${SOCKSHOP_BACKEND}
-    namespace/sockshop-core created
-    
-    $ kubectl apply -k k8s/${SOCKSHOP_BACKEND} --namespace sockshop-${SOCKSHOP_BACKEND}
-    ``` 
-
-* **Installing a Coherence Back-end**
-
-    ```bash
-    $ export SOCKSHOP_BACKEND=coherence
-    
-    $ kubectl create namespace sockshop-${SOCKSHOP_BACKEND}
-    namespace/sockshop-coherence created  
-     
-    $ helm install --namespace sockshop-${SOCKSHOP_BACKEND} --version 3.0.0 \
-                   coherence-operator coherence/coherence-operator
-
-    $ kubectl apply -k k8s/${SOCKSHOP_BACKEND} --namespace sockshop-${SOCKSHOP_BACKEND}
-    ```  
   
-> Note: The above helm command is for helm version 3, use the following command
-> If you are using helm version 2:
-> ```bash
-> $ helm install coherence/coherence-operator --version 3.0.0 \
->       --namespace sockshop-${SOCKSHOP_BACKEND} --name coherence-operator   
-> ```  
-
-This will merge all the files under the specified directory and create all Kubernetes 
-resources defined by them, such as deployment and service for each microservice.
 
 ### (Optional) Install the Original WeaveSocks Front End
 
