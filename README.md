@@ -89,7 +89,7 @@ Download the ATP Wallet from OCI Service Console :
 
 1. Download Wallet_<your_db_name>.zip
  ```bash
-    > Connect to the VM where you can connect to kubernetes cluster and can run kubectl cmd
+    > SSH to the VM where you can connect to kubernetes cluster and can run kubectl cmd
     > Download Wallet_<your_db_name>.zip localy on the filesystem
     > Create directory Wallet_<your_db_name>
     > Move  Wallet_<your_db_name>.zip file to c
