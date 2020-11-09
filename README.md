@@ -85,22 +85,32 @@ all project repositories at once.
 
 ## Pre-Requisites
 
-If you are going to install a `coherence` back-end or support for Prometheus and Grafana you
-will need to carry out the following:
+Download the ATP Wallet from OCI Service Console :
 
-1. Install `helm`
+1. Download Wallet_<your_db_name>
 
-    You must have at least version `v2.14.3` of `helm`. See [here](https://helm.sh/docs/intro/install/)
-    for information on installing `helm` for your platform.
+    > Connect to the VM where you can connect to kubernetes cluster and can run kubectl cmd
+    > Download Wallet_<your_db_name>.zip localy on the filesystem
+    > Create directory Wallet_<your_db_name>
+    > Move  Wallet_<your_db_name>.zip file to c
+    > Goto Wallet_<your_db_name>
+    > Unzip Wallet_<your_db_name>.zip
     
-    > Note: The `helm` commands below are for helm 3.3.
+    > In the same folder create a new file "atp_password.txt" with ATP DB password in it 
+    
+   
 
-1. Add the following `helm` repositories
+2. Git clone https://github.com/shashirsb/sockshop-main.git
 
+    > Edit the file k8s/generate_wallet_secret.sh
     ```bash
-    $ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
-    $ helm repo add coherence https://oracle.github.io/coherence-operator/charts
-    $ helm repo update
+    $ vi ./k8s/generate_wallet_secret.sh
+    
+    > Change the location of your wallet folder: 
+      e.g. WALLET_LOCATION=$HOME/Wallet_sockshopdb
+    
+    $ Run the script to create the secret within namespace sockshop-atpsoda 
+    ./k8s/generate_wallet_secret.sh
     ```   
 
 ## Quick Start
