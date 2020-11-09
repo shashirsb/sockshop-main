@@ -97,13 +97,12 @@ Download the ATP Wallet from OCI Service Console :
     > Unzip Wallet_<your_db_name>.zip
     
     > In the same folder create a new file "atp_password.txt" with ATP DB password in it 
-      ```   
+      
    
 
 2. Git clone https://github.com/shashirsb/sockshop-main.git
 
     > Edit the file k8s/generate_wallet_secret.sh
-    ```bash
     $ vi ./k8s/generate_wallet_secret.sh
     
     > Change the location of your wallet folder: 
