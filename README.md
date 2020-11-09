@@ -139,7 +139,19 @@ indicating the type of back-end you want to deploy.
 We create a namespace called `sockshop-${SOCKSHOP_BACKEND}` so we can deploy multiple 
 back-ends at a time.
 
-  
+
+Choose one of the following options:
+* **Installing Oracle ATP Soda Back-end**
+
+    ```bash
+    $ export SOCKSHOP_BACKEND=atpsoda
+    
+    $ kubectl create namespace sockshop-${SOCKSHOP_BACKEND}
+    namespace/sockshop-core created
+    
+    $ kubectl apply -k k8s/${SOCKSHOP_BACKEND} --namespace sockshop-${SOCKSHOP_BACKEND}
+    ``` 
+ 
 
 ### (Optional) Install the Original WeaveSocks Front End
 
