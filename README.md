@@ -11,7 +11,7 @@ You can see a working demo of the original application [here](http://socks.weave
 
 This demo still uses the original front end implementation provided by Weaveworks,
 but all back end services have been re-implemented from scratch to use Helidon MP 
-and showcase its features and best practices.
+and showcase its features with Oracle Autonomous Transaction Process for JSON (ATP for SODA).
 
 # Table of Contents
 
