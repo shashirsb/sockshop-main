@@ -87,7 +87,7 @@ all project repositories at once.
 
 Download the ATP Wallet from OCI Service Console :
 
-1. Download Wallet_<your_db_name>
+1. Download Wallet_<your_db_name>.zip
  ```bash
     > Connect to the VM where you can connect to kubernetes cluster and can run kubectl cmd
     > Download Wallet_<your_db_name>.zip localy on the filesystem
