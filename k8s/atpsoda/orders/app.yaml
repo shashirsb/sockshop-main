@@ -32,3 +32,29 @@ spec:
         - mountPath: /home/opc/Wallet_sockshopdb
           name: atp-secret
           readOnly: true
+          
+--
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"orders","component":"sockshop"},"name":"orders","namespace":"sockshop-atpsoda"},"spec":{"ports":[{"name":"http","port":80,"targetPort":7001}],"selector":{"app":"orders"}}}
+  labels:
+    app: orders
+    component: sockshop
+  name: orders
+  namespace: sockshop-atpsoda
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 7001
+  selector:
+    app: orders
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

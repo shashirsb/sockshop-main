@@ -32,3 +32,30 @@ spec:
         - mountPath: /home/opc/Wallet_sockshopdb
           name: atp-secret
           readOnly: true
+
+
+--
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"shipping","component":"sockshop"},"name":"shipping","namespace":"sockshop-atpsoda"},"spec":{"ports":[{"name":"grpc","port":1408,"targetPort":1408}],"selector":{"app":"shipping"}}}
+  labels:
+    app: shipping
+    component: sockshop
+  name: shipping
+  namespace: sockshop-atpsoda
+spec:
+  ports:
+  - name: grpc
+    port: 1408
+    protocol: TCP
+    targetPort: 1408
+  selector:
+    app: shipping
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
