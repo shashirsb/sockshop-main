@@ -91,12 +91,22 @@ Download the ATP Wallet from OCI Service Console :
  ```bash
     > SSH to the VM where you can connect to kubernetes cluster and can run kubectl cmd
     > Download Wallet_<your_db_name>.zip localy on the filesystem
+      e.g. $HOME/Wallet_sockshopdb.zip
+      
     > Create directory Wallet_<your_db_name>
-    > Move  Wallet_<your_db_name>.zip file to c
-    > Goto Wallet_<your_db_name>
-    > Unzip Wallet_<your_db_name>.zip
+    e.g. $HOME/Wallet_sockshopdb
     
-    > In the same folder create a new file "atp_password.txt" with ATP DB password in it 
+    > Move  Wallet_<your_db_name>.zip file to $HOME/Wallet_sockshopdb
+    e.v. mv $HOME/Wallet_sockshopdb.zip $HOME/Wallet_sockshopdb/
+    
+    > Goto Wallet_<your_db_name>
+    e.g. cd $HOME/Wallet_sockshopdb
+    
+    > Unzip Wallet_<your_db_name>.zip
+    e.g. unzip $HOME/Wallet_sockshopdb.zip
+    
+    > In the same folder create a new file "atp_password.txt" with ATP DB password in it
+    echo "passwordforatp" > $HOME/Wallet_sockshopdb/atp_password.txt
       
    
 
