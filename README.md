@@ -103,7 +103,7 @@ Download the ATP Wallet from OCI Service Console :
     e.g. cd $HOME/Wallet_sockshopdb
     
     > Unzip Wallet_<your_db_name>.zip
-    e.g. unzip $HOME/Wallet_sockshopdb.zip
+    e.g. unzip Wallet_sockshopdb.zip
     
     > In the same folder create a new file "atp_password.txt" with ATP DB password in it
     echo "passwordforatp" > $HOME/Wallet_sockshopdb/atp_password.txt
