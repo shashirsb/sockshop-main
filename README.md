@@ -1,4 +1,4 @@
-# Helidon Sock Shop - for ORACLE ATP Soda as Backend Data Store
+# Helidon Sock Shop with ORACLE ATP Soda as Backend Data Store
 
 This project is an implementation of the microservices based application
 using [Helidon Microservices Framework](https://helidon.io/).
